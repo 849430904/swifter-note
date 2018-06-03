@@ -25,10 +25,10 @@ class Person : NSObject{
     //重载构造函数，指定参数
     //如果没有实现init()构造函数，一旦实现了其他的构造函数，默认的init()构造函数将无法访问
     
-    init(name:String,age:Int){
-        self.name = name//如果参数名称与属性相同，需要添加self.区分
-        self.age = age
-    }
+//    init(name:String,age:Int){
+//        self.name = name//如果参数名称与属性相同，需要添加self.区分
+//        self.age = age
+//    }
     //构造函数需要给非可选项的属性设置初始值
     //完成构造之后，每一个属性（非可选）都有值
     
@@ -57,6 +57,39 @@ class Person : NSObject{
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print("=====\(key)")
     }
+    
+    //便利的构造函数
+    //1,作用：判断参数条件是否合法
+    //2,传递重要/常用参数
+    //3，如果条件不满足，可以返回nil,只有便利的构造函数，才允许返回nil
+    //4,指定的构造函数不允许返回nil,必须要返回一个对象
+    convenience init(name:String,age:Int){
+    
+        //判断年龄
+        if age<0 || age >100{
+          return nil//如果没有convenience关键字，这里会报错
+        }
+        //调用默认的构造函数设置初始值
+        self.name = name
+        self.age = age
+    }
+    
+    //没有func
+    //没有()
+    //不能被重载
+    //不能直接调用，被自动调用
+    deinit {//析构函数
+        print("person deinit")
+    }
+    //析构函数：释放子类的属性；释放父类的属性
+    /*
+     
+     析构函数类似于OC中的dealloc,对象被释放之前调用，可以用于释放资源
+     举个例子：某一个类中，开启了一个时间，在构造函数中设置初始值
+     */
+    
+    
+
 }
 
 class Student : Person{
@@ -70,7 +103,6 @@ class Student : Person{
 
 //在swift中，默认所有类都是全局共享的，不需要任何引用，就可以直接使用
 //在同一个全名空间下全局共享，默认情况下，命名空间就是项目名称
-
 
 
 
