@@ -13,5 +13,10 @@
         <page name='闭包'/>
         <page name='Setter与Getter、懒加载'/>
         <page name='闭包的循环引用'/>
+        <page name='网络'/>
+        <page name='扩展'/>
+        <page name='协议'/>
+        <page name='访问控制'/>
+        <page name='枚举'/>
     </pages>
 </playground>
