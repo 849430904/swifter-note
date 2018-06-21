@@ -62,3 +62,7 @@ arr1 += arr2
 //注意：在拼接的时候，数组的类型必须是一样的，否则无法拼接
 //arr2 += arr3 //error
 
+//遍历数组
+arrayM4.forEach { (number) in
+    print(number)
+}

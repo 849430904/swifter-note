@@ -24,3 +24,15 @@ for i in range {//0-10
     print(i)
 }
 
+var datalist = ["a","b"]
+for _ in 0..<datalist.count {
+   
+}
+
+for index in 0..<datalist.count {
+    
+}
+
+
+
+

@@ -41,7 +41,7 @@ let count = dataList?.count ?? 0 //如果dataList为nil，就使用??后面的�
 
 // ！表示程序员承诺dataList一定有值，如果为nil，程序就崩
 // 每一次写!强制解包，一定要思考
-var count1 = dataList!.count
+var count1 = dataList?.count
 
 let cName = name ?? "abc"//如果name为nil，就使用??后面的字符串，否则使用name的结果
 
